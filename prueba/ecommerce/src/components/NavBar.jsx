@@ -1,35 +1,67 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import CartWidget from './CartWidget';
+import CartWidget from "./CartWidget";
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-    <div class="container-fluid navegador" style={{justifyContent:'center'}}>
-      <div>
-      <a class="navbar-brand" href="#">Home</a>
-      <a  class="navbar-brand" href="#">Categorias</a>
-          <a  class="navbar-brand" href="#">Contacto</a>
-          <a  class="navbar-brand" href="#">Formas de pago</a>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
+        <div
+          className="container-fluid navegador"
+          style={{ justifyContent: "center" }}
+        >
+          <div className="Categories">
+            <NavLink
+              to={`/`}
+              className={({ isActive }) =>
+                isActive ? "ActiveOption" : "Option"
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to={`/category/Buzos`}
+              className={({ isActive }) =>
+                isActive ? "ActiveOption" : "Option"
+              }
+            >
+              Buzos
+            </NavLink>
+            <NavLink
+              to={`/category/Zapatillas`}
+              className={({ isActive }) =>
+                isActive ? "ActiveOption" : "Option"
+              }
+            >
+              Zapatillas
+            </NavLink>
           </div>
-          <CartWidget>
-         </CartWidget>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-
-         
+          <CartWidget></CartWidget>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav"></div>
+          </div>
         </div>
-      </div>
+      </nav>
     </div>
-
-  </nav>
-
-  </div>
   );
 };
-export default NavBar
+export default NavBar;
 
+{
+  /* <a className="navbar-brand" href="#">Home</a>
+      <a className="navbar-brand" href="#">Zapatillas</a>
+          <a  className="navbar-brand" href="#">Buzos</a>
+          <a  className="navbar-brand" href="#">Contacto</a> */
+}
