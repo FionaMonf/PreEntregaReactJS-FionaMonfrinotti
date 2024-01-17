@@ -1,22 +1,42 @@
 const products = [
   {
-    id: "Buzo",
+    id: "Zapatilla1",
     nombre: "nike",
-    price: 3000,
-    category: "Buzos",
+    price: 50000,
+    category: "Zapatillas",
     img: "/src/imagenes/nike.jpg",
     stock: 30,
-    description: "Descripcion Nike Air Max",
+    description: "Nike Air Max rosas",
   },
   {
-    id: "Zapatilla",
+    id: "Zapatilla2",
     nombre: "Adidas forum",
-    price: 9000,
+    price: 90000,
     category: "Zapatillas",
     img: "/src/imagenes/adidas.avif",
     stock: 10,
-    description: "Descripcion adidas forum",
+    description: "Adidas forum azules",
   },
+
+  {
+    id: "Buzo1",
+    nombre: "Buzo Nike",
+    price: 20000,
+    category: "Buzos",
+    img: "/src/imagenes/buzoNike.jpg",
+    stock: 10,
+    description: "Buzo Nike gris",
+  },
+
+  {
+    id: "Buzo2",
+    nombre: "Buzo Adidas",
+    price: 15000,
+    category: "Buzos",
+    img: "/src/imagenes/BuzoAdidas.jpg",
+    stock: 50,
+    description: "Buzo Adidas negro",
+  }
 ];
 
 export const getProducts = () => {

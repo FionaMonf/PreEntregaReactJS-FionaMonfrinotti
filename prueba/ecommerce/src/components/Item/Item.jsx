@@ -8,8 +8,8 @@ const Item = ({id, nombre, img, price, stock}) => {
             {nombre}
         </h2>
         </header>
-        <picture>
-            <img src={img} alt={nombre} className="ItemImg"/>
+        <picture >
+            <img src={img} alt={nombre} className="ItemImg" style={{ weight: 80, width: 80 }}/>
         </picture>
         <section>
             <p className="Info">

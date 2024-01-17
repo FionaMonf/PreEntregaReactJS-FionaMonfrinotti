@@ -10,6 +10,8 @@ import Nike from "./imagenes/nike.jpg";
 import Adidas from "./imagenes/adidas.avif";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import BuzoNike from './imagenes/buzoNike.jpg'
+import BuzoAdidas from './imagenes/BuzoAdidas.jpg'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
