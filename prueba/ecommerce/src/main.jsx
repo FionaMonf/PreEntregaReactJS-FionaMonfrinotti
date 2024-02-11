@@ -33,7 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           />
           <Route path="/category/:categoryId" element={<ItemListContainer />} />
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-          {/* <Route path="/Cart/:Cart " element={<Cart />} /> */}
+          {/* <Route path="/cart/:Cart " element={<Cart />} /> */}
         </Routes>
       </CartProvider>
     </BrowserRouter>
