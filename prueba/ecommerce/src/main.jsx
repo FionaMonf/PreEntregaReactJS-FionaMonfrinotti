@@ -13,17 +13,14 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import BuzoNike from "./imagenes/buzoNike.jpg";
 import BuzoAdidas from "./imagenes/BuzoAdidas.jpg";
 import { CartProvider } from "./components/context/CartContext";
-// import { Cart } from "./components/Cart";
+import { CartView } from "./components/CartView";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
+      <img src={Logo} alt="" style={{ weight: 50, width: 50 }} />
+      <h1 style={{ color: "red", textAlign: "center" }}>Monfri's E-Commerce</h1>
       <CartProvider>
-        <img src={Logo} alt="" style={{ weight: 50, width: 50 }} />
-        <h1 style={{ color: "red", textAlign: "center" }}>
-          Monfri's E-Commerce
-        </h1>
-
         <NavBar />
 
         <Routes>
@@ -33,7 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           />
           <Route path="/category/:categoryId" element={<ItemListContainer />} />
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-          {/* <Route path="/cart/:Cart " element={<Cart />} /> */}
+          <Route path="/cart" element={<CartView />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>

@@ -5,39 +5,36 @@ import { useParams } from "react-router-dom";
 import { db } from "../../Services/Firebase/firebase.config";
 import { getDocs, collection, query, where } from "firebase/firestore";
 
-
-
-
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState (true)
+  const [loading, setLoading] = useState(true);
 
   const { categoryId } = useParams();
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
 
-const productsCollection = collection(db, "products");
+    const productsCollection = categoryId
+      ? query(collection(db, "products"), where("category", "==", categoryId))
+      : collection(db, "products");
 
-  getDocs(productsCollection)
-    .then((querySnapshot) => {
-      const productsAdapted = querySnapshot.docs.map((doc) => {
-        const fields = doc.data();
-        return { id: doc.id, ...fields };
+    getDocs(productsCollection)
+      .then((querySnapshot) => {
+        const productsAdapted = querySnapshot.docs.map((doc) => {
+          const fields = doc.data();
+          return { id: doc.id, ...fields };
+        });
+        setProducts(productsAdapted);
+      })
+
+      .catch((error) => {
+        showNotification("error", "Hubo un error");
+      })
+
+      .finally(() => {
+        setLoading(false);
       });
-      setProducts(productsAdapted);
-    })
-
-    .catch((error) => {
-      showNotification("error", "Hubo un error");
-    })
-
-    .finally(() => {
-      setLoading(false);
-    });
-
-  })
-  
+  });
 
   // useEffect(() => {
   //   const asyncFunc = categoryId ? getProductsByCategory : getProducts;

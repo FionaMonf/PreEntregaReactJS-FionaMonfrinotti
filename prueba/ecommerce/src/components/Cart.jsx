@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { CartContext } from "../components/context/CartContext"
 import { Link } from "react-router-dom";
+import { CartView } from "./CartView";
 
-const Cart = () => {
+export const Cart = () => {
   const { cart, clearCart, totalQuantity, total } = useContext(CartContext);
 
   if (totalQuantity === 0) {
@@ -19,7 +20,7 @@ const Cart = () => {
   return (
     <div>
       {cart.map((p) => (
-        <CartItem key={p.id} {...p} />
+        <CartView key={p.id} {...p} />
       ))}
       <h3>Total: ${total}</h3>
       <button onClick={() => clearCart()} className="Button">
@@ -32,4 +33,4 @@ const Cart = () => {
   );
 };
 
-export default Cart
+
