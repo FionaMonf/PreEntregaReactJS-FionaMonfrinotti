@@ -30,15 +30,7 @@ const ItemDetailContainer = () => {
       });
   }, [itemId]);
 
-  // useEffect(() => {
-  //   getProductById(itemId)
-  //     .then((response) => {
-  //       setProduct(response);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [itemId]);
+ 
 
   return (
     <div className="ItemDetailContainer">
