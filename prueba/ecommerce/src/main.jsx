@@ -14,6 +14,7 @@ import BuzoNike from "./imagenes/buzoNike.jpg";
 import BuzoAdidas from "./imagenes/BuzoAdidas.jpg";
 import { CartProvider } from "./components/context/CartContext";
 import { CartView } from "./components/CartView";
+import { Checkout } from "./components/Checkout/Checkout";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/category/:categoryId" element={<ItemListContainer />} />
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartView />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>
