@@ -48,7 +48,7 @@ export const CheckoutForm = ({ onConfirm }) => {
             onChange={({ target }) => setEmail(target.value)}
           />
         </label>
-        
+
       </form>
     </div>
   );

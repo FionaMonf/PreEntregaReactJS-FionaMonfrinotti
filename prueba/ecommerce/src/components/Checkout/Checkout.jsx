@@ -91,6 +91,7 @@ export const Checkout = () => {
     <div>
       <h1>Checkout</h1>
       <CheckoutForm onConfirm={createOrder} />
+      <button onClick={createOrder}>Generar orden</button>
     </div>
   );
 };
