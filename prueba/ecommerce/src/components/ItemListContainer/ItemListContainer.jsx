@@ -4,12 +4,17 @@ import { useParams } from "react-router-dom";
 // import { getProducts, getProductsByCategory } from "../asyncMock";
 import { db } from "../../Services/Firebase/firebase.config";
 import { getDocs, collection, query, where } from "firebase/firestore";
+import { useNotification } from '../Notification/NotificationServices'
+
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const { categoryId } = useParams();
+
+  const { showNotification } = useNotification()
+
 
   useEffect(() => {
     setLoading(true);
