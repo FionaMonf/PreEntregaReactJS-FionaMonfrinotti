@@ -30,9 +30,8 @@ export const CheckoutForm = ({ onConfirm }) => {
           />
         </label>
         <label className="Label">
-            Telefono
-            
-            <input
+          Telefono
+          <input
             className="Input"
             type="text"
             value={phone}
@@ -40,18 +39,16 @@ export const CheckoutForm = ({ onConfirm }) => {
           />
         </label>
         <label className="Label">
-            Email 
-            <input
+          Email
+          <input
             className="Input"
             type="text"
             value={email}
             onChange={({ target }) => setEmail(target.value)}
           />
         </label>
-
+        <button type="submit">Comprar</button>
       </form>
     </div>
   );
 };
-
-

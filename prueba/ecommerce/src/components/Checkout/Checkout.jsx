@@ -30,7 +30,6 @@ export const Checkout = () => {
         },
         items: cart,
         total: total,
-        date: Timestamp.fromDate(new Date()),
       };
       const batch = writeBatch(db);
 
@@ -91,7 +90,6 @@ export const Checkout = () => {
     <div>
       <h1>Checkout</h1>
       <CheckoutForm onConfirm={createOrder} />
-      
     </div>
   );
 };

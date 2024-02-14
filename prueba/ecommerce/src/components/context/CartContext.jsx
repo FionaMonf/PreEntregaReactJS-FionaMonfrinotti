@@ -39,12 +39,22 @@ export const CartProvider = ({ children }) => {
 
     return accu;
   };
+  const getTotal = () => {
+    let accu = 0;
+
+    cart.forEach((prod) => {
+      accu += prod.price;
+    });
+
+    return accu;
+  };
 
   const totalQuantity = getTotalQuantity();
+  const total = getTotal();
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, totalQuantity }}
+      value={{ cart, addItem, removeItem, clearCart, totalQuantity, total }}
     >
       {children}
     </CartContext.Provider>
